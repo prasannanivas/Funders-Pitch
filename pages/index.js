@@ -3,6 +3,7 @@ import factory from "../ethereum/factory";
 import Layout from "../components/Layout";
 import { Card, Button } from "semantic-ui-react";
 import { Link } from "../routes";
+import ProjectDetails from '../components/projectDetails';
 
 class Rootpage extends Component {
   static async getInitialProps() {
@@ -10,26 +11,18 @@ class Rootpage extends Component {
     return { campaigns };
   }
 
-  renderCampaigns() {
-    const items = this.props.campaigns.map((address) => {
-      return {
-        header: 'Managed by : ' + address,
-        description: (
-          <Link route={`/Campaigns/show/${address}`}>
-            <a>View Campaign</a>
-          </Link>
-        ),
-        fluid: true,
-      };
-    });
-    return <Card.Group items={items} />;
-  }
+  projectdetails(){
+    return this.props.campaigns.map((address , i)=>{
+        return <ProjectDetails key = {i} id={i+1} address = {address} />
+    })
+}
+  
 
   render() {
     return (
       <Layout>
         <div className = "text-center">
-          {this.renderCampaigns()}
+        {this.projectdetails()}
           <Link route="/Campaigns/new">
             <Button
               content="Create Campaign"
@@ -39,6 +32,7 @@ class Rootpage extends Component {
             />
           </Link>
         </div>
+        
       </Layout>
     );
   }

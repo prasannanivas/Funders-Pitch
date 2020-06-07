@@ -19,6 +19,9 @@ class show extends Component {
       requestsCount: summary[2],
       approversCount: summary[3],
       manager: summary[4],
+      projectTitle : summary[5],
+      projectDescription : summary[6],
+      projectPromise : summary[7],
       address : props.query.address,
     };
   }
@@ -27,8 +30,8 @@ class show extends Component {
     return (
       <Layout>
         <div className="text-center rounded overflow-hidden shadow-2xl ">
-            <div className="text-4xl text-gray-800">All about this campaign</div>
-          <div className="p-10 m-20 flex flex-wrap text-center justify-center">
+    <div className="text-4xl m-5 text-gray-800">{this.props.projectTitle}</div>
+          <div className="p-10 m-10 flex flex-wrap text-center justify-center">
           <div className = "w-4/5 p-5">
             <ContributeForm address = {this.props.address}/>
             </div>
