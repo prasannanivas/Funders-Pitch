@@ -22,7 +22,7 @@ class Projectdetails extends Component {
 
   render() {
     return (
-      <div className="hover:bg-purple-400 bg-gray-200">
+      <div className="hover:bg-purple-400 bg-gray-200 m-10">
         <a
           
           href={`/Campaigns/show/${this.props.address}`}
