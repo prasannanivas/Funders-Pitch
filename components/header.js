@@ -5,7 +5,7 @@ export default function Header() {
     <Menu color="purple"  size="huge" inverted>
       <Link route="/">
         <a className="item">
-          <Menu.Item>CrowdCoin</Menu.Item>
+          <Menu.Item>FundersPitch</Menu.Item>
         </a>
       </Link>
 
